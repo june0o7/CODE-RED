@@ -31,7 +31,7 @@ void Enqueue(int x)
 {
     if (IsFull())
     {
-        printf(" the queue is full ");
+        printf(" overflow ");
     }
     else if (IsEmpty())
     {
