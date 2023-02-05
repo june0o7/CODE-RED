@@ -16,6 +16,106 @@ struct node *fnode(int data)
     head->prev=NULL;
     return head;
 }
+
+struct node *deldata(int data,struct node *ptr)
+{
+   
+    struct node *ptr1=ptr;
+   
+    if (ptr->data==data)
+    {
+        struct node *del=ptr;
+        ptr=ptr->next;
+        free (del);
+        return ptr;
+    }
+     struct node *dell=NULL;
+    
+    while (ptr->data!=data && ptr->next!=NULL)
+    {
+    	dell=ptr;
+
+        ptr=ptr->next;
+    }
+    if (ptr->data==data)
+    { 
+    dell->next=ptr->next;
+       
+        free (ptr);
+         return ptr1;
+    }
+    
+    
+}
+struct node *addAtEnyPos(int data, struct node *head, int p,int m)
+{
+    struct node *current = (struct node *)malloc(sizeof(NODE));
+    current->data = data;
+    struct node *ptr = head;
+    struct node *ptr2 = ptr->next;
+     if (p==1)
+        {
+            current->prev=NULL;
+            current->next=ptr;
+            ptr->prev=current;
+            return current;
+        }
+    else if(p==m)
+    { 
+    
+        while (ptr->next!=NULL)
+        {
+            ptr=ptr->next;
+        }
+        current->next=NULL;
+        current->prev=ptr;
+        ptr->next=current;
+        return head;
+    }    
+        
+    
+    
+        
+    int i;
+    for (i = 1; i < p - 1; i++)
+    {
+       
+        
+        ptr = ptr->next;
+    }
+    current->next = ptr->next;
+    ptr2->prev = current;
+    current->prev = ptr;
+    ptr->next = current;
+    return head;
+}
+struct node *delAtEnyPos(int p, struct node *ptr)
+{
+
+    struct node *hptr = ptr;
+    int i;
+    for (i = 1; i < p; i++)
+    {
+        
+        ptr = ptr->next;
+    }
+    struct node *ptr2 = ptr->prev;
+    struct node *ptr3 = ptr->next;
+
+    if (ptr->next == NULL)
+    {
+        ptr2->next = NULL;
+        free(ptr);
+        
+    }
+    else if (ptr->next != NULL)
+    {
+        ptr2->next = ptr3;
+        ptr3->prev = ptr2;
+        free(ptr);
+    }
+    return hptr;
+}
 struct node *addnode(int data , struct node *ptr)
 {
     struct node *current=(struct node *)malloc(sizeof(NODE));

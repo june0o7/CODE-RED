@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/CODE RED/CODE 'C'/assingment",
-      "program": "d:/CODE RED/CODE 'C'/assingment/build/Debug/outDebug",
+      "cwd": "d:/CODE RED/CODE 'C'/trees",
+      "program": "d:/CODE RED/CODE 'C'/trees/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

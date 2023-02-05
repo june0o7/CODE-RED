@@ -45,15 +45,9 @@ void delatenypos(struct node *ptr,int p)
         ptr2->next=ptr->next;
         free(ptr);
     }
-    
-    // while (ptr->next != NULL)
-    // {
-    //     ptr2 = ptr;
-    //     ptr = ptr->next;
-    // }
-    // ptr2->next = NULL;
-    // free(ptr);
 }
+    
+   
 int main()
 {
     struct node *head = NULL;
