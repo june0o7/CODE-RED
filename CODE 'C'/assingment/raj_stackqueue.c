@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #define MAX 5
 int size, i;
-
+//it is edited..........
 int stack1[MAX];
 int stack2[MAX];
 
